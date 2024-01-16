@@ -10,12 +10,12 @@ function delay(milliseconds){
         setTimeout(resolve, milliseconds);
     });
 }
-let insults = ["i hate you", "fuck you you useless sack of shit","send me it please","please send it","idiot","loser man","i hate you so mch you ingrate","your mother dropped you as a head as a child","hannah you fucking ingrate","you fat pig","you piece of piece","stupidi diot loser man","heretic","uou FUCKING jellyfish","babboon ape moneky ","nitwit loser idiot","nincompoop","you fucking little rapscallion you aydsi asudoiahsjdasjk","AAAAAAAAAAAAAAA","donald trump idiot","unguloatae"]
+let insults = ["thumbs up","thumbs down","man","whatever dude", "ok bro"]
 const postToInsta = async () => {
     const ig = new IgApiClient();
     ig.state.generateDevice(process.env.IG_USERNAME);
     await ig.account.login(process.env.IG_USERNAME, process.env.IG_PASSWORD);
-    const userId = await ig.user.getIdByUsername('liza_potatova');
+    const userId = await ig.user.getIdByUsername('han_peckham_');
     async function init() {
         const thread = ig.entity.directThread([userId.toString()]);
         await thread.broadcastText(insults[Math.floor(Math.random()*insults.length)]);
